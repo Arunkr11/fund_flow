@@ -16,7 +16,7 @@ class Transaction(models.Model):
         ("bills","bills"),
         ("miscellaneous","miscellaneous")
     )
-    category = models.CharField(max_length=225)
+    category = models.CharField(max_length=225,choices=cat_options)
     created_date = models.DateTimeField(auto_now_add=True,blank=True)
     user = models.CharField(max_length=225)
     

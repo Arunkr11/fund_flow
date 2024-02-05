@@ -16,7 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from fundflowbudget import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('transactions/all/', views.TransactionListView.as_view(), name='transactions-list'),
+    path('transactions/add/', views.TransactionCreatedView.as_view(), name='transactions-add'),
+    path('transactions/<int:pk>',views.TransactionDetailView.as_view(), name='transactions-detail'),
+    path('transactions/<int:pk>/remove',views.TransactionDeleteView.as_view(), name='transactions-delete'),
+    path('transactions/<int:pk>/change',views.TransactionUpdateView.as_view(),name='transactions-update'),
+    path('signup/',views.SignUpView.as_view(), name='signup-view'),
+    path('signin/',views.SignInView.as_view(), name='signin-view')
 ]
