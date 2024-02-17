@@ -26,5 +26,6 @@ urlpatterns = [
     path('transactions/<int:pk>/remove',views.TransactionDeleteView.as_view(), name='transactions-delete'),
     path('transactions/<int:pk>/change',views.TransactionUpdateView.as_view(),name='transactions-update'),
     path('signup/',views.SignUpView.as_view(), name='signup-view'),
-    path('signin/',views.SignInView.as_view(), name='signin-view')
+    path('',views.SignInView.as_view(), name='signin-view'),
+    path('signout/',views.SignOutView.as_view(), name='signout-view'),
 ]
